@@ -34,7 +34,7 @@ To set up the Electronic Management Tool for Barangay Health Workers on your sys
    - Navigate to the directory where you want to install the tool.
    - Run the following command to clone the repository:
      ```
-     git clone https://github.com/yourusername/your-repo.git
+     [git clone https://github.com/ambo18/EMT-FOR-BHW.git]
      ```
    
 2. **Install Dependencies:**
