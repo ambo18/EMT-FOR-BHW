@@ -59,6 +59,10 @@
 													<div class="form-group">
                                                         <label for="age">Age</label>
                                                         <input type="number" class="form-control" id="age" name="age" value="<?= ucwords($row['age']) ?>" required>
+                                                    </div>
+													<div class="form-group">
+                                                        <label for="p_guardian_name">Guardian Name</label>
+                                                        <input type="text" class="form-control mb-1" id="p_guardian_name" name="p_guardian_name" value="<?= ucwords($row['p_guardian_name']) ?>" required>
                                                     </div> 
                                                     <div class="form-group">
                                                         <label for="address">Address</label>

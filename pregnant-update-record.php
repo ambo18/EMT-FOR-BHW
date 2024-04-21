@@ -4,6 +4,7 @@
     $p_name = strtoupper($_POST['p_name']);
     $birthdate = strtoupper($_POST['birthdate']);
     $age = strtoupper($_POST['age']);
+    $p_guardian_name = strtoupper($_POST['p_guardian_name']);
     $address = strtoupper($_POST['address']);
     $lmp = strtoupper($_POST['lmp']);
     $edd = strtoupper($_POST['edd']);
@@ -19,6 +20,7 @@
                 SET p_name  ='$p_name',
                     birthdate  ='$birthdate', 
                     age        ='$age',
+                    p_guardian_name  ='$p_guardian_name',
                     address    ='$address',
                     lmp     ='$lmp',
                     edd     ='$edd',

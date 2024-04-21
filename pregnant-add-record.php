@@ -3,6 +3,7 @@
     $p_name = strtoupper($_POST['p_name']);
     $birthdate = strtoupper($_POST['birthdate']);
     $age = strtoupper($_POST['age']);
+    $p_guardian_name = strtoupper($_POST['p_guardian_name']);
     $address = strtoupper($_POST['address']);
     $lmp = strtoupper($_POST['lmp']);
     $edd = strtoupper($_POST['edd']);
@@ -15,7 +16,8 @@
 
     $query = "INSERT INTO tbl_pregnant (p_name, 
                                         birthdate, 
-                                        age, 
+                                        age,
+                                        p_guardian_name, 
                                         address,
                                         lmp,
                                         edd,
@@ -27,6 +29,7 @@
                 VALUES ('$p_name',
                         '$birthdate',
                         '$age',
+                        '$p_guardian_name',
                         '$address',
                         '$lmp',
                         '$edd',

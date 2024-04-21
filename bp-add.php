@@ -41,13 +41,13 @@
                                                     <input type="text" class="form-control mb-1" id="p_name" name="p_name" required>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label>Birthdate</label>
-                                                    <input type="date" class="form-control" name="birthdate" id="date" required>
-                                                </div>                                               
-                                                <div class="form-group">
-                                                    <label for="age">Age</label>
-                                                    <input type="number" class="form-control" id="age" name="age" required>
-                                                </div>
+													<label>Birthdate</label>
+													<input type="date" class="form-control" name="birthdate" id="date" onchange="calculateAge()" required>
+												</div>
+												<div class="form-group">
+													<label for="age">Age</label>
+													<input type="number" class="form-control" id="age" name="age" readonly required>
+												</div>
 												<div class="form-group">
                                                     <label for="gender">Gender</label>
                                                     <select class="form-control" id="gender" name="gender" required>
@@ -124,4 +124,23 @@
 		}
 	</style>
 </body>
+<script>
+    function calculateAge() {
+        // Get the birthdate value
+        var birthdate = document.getElementById('date').value;
+
+        // Calculate age
+        var today = new Date();
+        var birthDate = new Date(birthdate);
+        var age = today.getFullYear() - birthDate.getFullYear();
+        var monthDiff = today.getMonth() - birthDate.getMonth();
+        
+        if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+            age--;
+        }
+
+        // Update the age input field
+        document.getElementById('age').value = age;
+    }
+</script>
 </html>

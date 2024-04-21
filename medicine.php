@@ -89,9 +89,6 @@
 																	<a href="medicine_update_form.php?id=<?= $row['id'] ?>" class="btn btn-link" data-toggle="tooltip" data-placement="top" title="Update">
 																		<i class="fa fa-edit mr-2"></i>
 																	</a>
-																	<a href="remove_item.php?id=<?= $row['id'] ?>&tbl=tbl_medicine&page=medicine" class="btn btn-link btn-danger" onclick="return confirm('Are you sure you want to delete this item?');" data-toggle="tooltip" data-placement="top" title="Remove">
-																		<i class="fa fa-trash"></i>
-																	</a>
 																</td>
 															<?php endif ?>
 														</tr>
