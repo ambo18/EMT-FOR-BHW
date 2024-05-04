@@ -7,7 +7,7 @@
     $birthdate = strtoupper($_POST['birthdate']);
     $age = strtoupper($_POST['age']);
     $gender = strtoupper($_POST['gender']);
-    $dateofdeworming = strtoupper($_POST['dateofdeworming']);
+    $date = strtoupper($_POST['date']);
     $typeofdeworming = strtoupper($_POST['typeofdeworming']);
     $phone = strtoupper($_POST['phone']);
     $remarks = strtoupper($_POST['remarks']);
@@ -21,7 +21,7 @@
                     birthdate  ='$birthdate',
                     age        ='$age', 
                     gender     ='$gender',
-                    dateofdeworming  ='$dateofdeworming',
+                    date  ='$date',
                     typeofdeworming ='$typeofdeworming',
                     remarks ='$remarks',
                     phone      ='$phone'

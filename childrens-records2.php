@@ -53,20 +53,25 @@
 							<div class="card">
 								<div class="card-header">
 									<div class="card-head-row">
-										<div class="card-tools">
-											<?php if(isset($_SESSION['username']) && $_SESSION['role']!='resident'): ?>
-												<button class="btn btn-primary btn-border dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #FFFFFF;">Add Record</button>
-												<div class="dropdown-menu">
-													<a class="dropdown-item" href="deworming.php">Deworming</a>
-													<a class="dropdown-item" href="oper-timbang.php">Operation Timbang</a>
-													<a class="dropdown-item" href="vitamin.php">Distribution Of Vitamin</a>
-												</div>
-												<button onclick="Export()" class="btn btn-default btn-default">
-													<i class="fa fa-download mr-2"></i>
-													Export to CSV
-												</button>
-											<?php endif?>
-										</div>
+                                        <?php if(isset($_SESSION['username']) && $_SESSION['role']!='resident'): ?>
+                                        <div class="card-tools" style="margin-left: 660px;">
+                                                <button class="btn btn-primary btn-border dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #FFFFFF;">Add Record</button>
+                                                <div class="dropdown-menu">
+                                                    <a class="dropdown-item" href="deworming-add.php">Deworming</a>
+                                                    <a class="dropdown-item" href="oper-timbang-add.php">Operation Timbang</a>
+                                                    <a class="dropdown-item" href="vitamin-add.php">Distribution Of Vitamin</a>
+                                                </div>
+                                            
+                                        </div>
+                                        <div class="card-tools">
+                                            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button" aria-haspopup="true" aria-expanded="false">Export Records</button>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" onclick="Export()">Deworming Records</a>
+                                                <a class="dropdown-item" onclick="Export2()">Operation Timbang Records</a>
+                                                <a class="dropdown-item" onclick="Export3()">Distribution Of Vitamin Records</a>
+                                            </div>
+                                        </div>
+                                        <?php endif?>
 									</div>
 								</div>
 							</div>
@@ -250,6 +255,28 @@
 			var stmt = "SELECT p_name,name_parent,address,birthdate,age,gender,dateofdeworming,typeofdeworming,phone,remarks FROM tbl_deworming";
 			var tblHeader = 'Patient Name,Parent Name,Address,Birth Date,Age,Gender,Date Of Deworming,Type Of Deworming,Contact Number,Remarks';
 			var fileName = "Deworming Records";
+			if(conf){
+				window.open(`export.php?query=${stmt}&tblHeader=${tblHeader}&fileName=${fileName}`, '_blank');
+			}
+		}
+
+        function Export2(){
+			// should have policy like 2 weeks retention of records and scope for export to csv
+			var conf = confirm("Export Operation Timbang Records to CSV?");
+			var stmt = "SELECT p_name,name_parent,address,birthdate,age,gender,weight,height,nutritional_status, dateofopertimbang,phone,remarks FROM tbl_operation_timbang";
+			var tblHeader = 'Patient Name,Parent Name,Address,Birth Date,Age,Gender,Weight,Height,Nutritional Status,Date,Contact Number,Remarks';
+			var fileName = "Operation Timbang Records";
+			if(conf){
+				window.open(`export.php?query=${stmt}&tblHeader=${tblHeader}&fileName=${fileName}`, '_blank');
+			}
+		}
+
+        function Export3(){
+			// should have policy like 2 weeks retention of records and scope for export to csv
+			var conf = confirm("Export Distribution of Vitamin to CSV?");
+			var stmt = "SELECT p_name,name_parent,address,birthdate,age,gender,vitamin,phone,remarks FROM tbl_operation_timbang";
+			var tblHeader = 'Patient Name,Parent Name,Address,Birth Date,Age,Gender,Vitamin,Contact Number,Remarks';
+			var fileName = "Distribution Of Vitamin Records";
 			if(conf){
 				window.open(`export.php?query=${stmt}&tblHeader=${tblHeader}&fileName=${fileName}`, '_blank');
 			}

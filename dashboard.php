@@ -5,6 +5,11 @@
     $dewormingTotal 	= $conn->query($stmtDewormingTotal);
 	$totalDeworming = $dewormingTotal->fetch_assoc();
 
+	// total children records
+	$stmtChildTotal 	= "SELECT COUNT(*) AS count FROM tbl_children_information";
+    $ChildTotal 	= $conn->query($stmtChildTotal);
+	$totalChild = $ChildTotal->fetch_assoc();
+
 	// total operation timbang records
 	$stmtOperTimTotal 	= "SELECT COUNT(*) AS count FROM tbl_operation_timbang";
     $OperTimTotal 	= $conn->query($stmtOperTimTotal);
@@ -104,38 +109,14 @@
 							<div class="d-flex p-3 flex-row ">
 								<div class="card text-center mr-3" style="width: 15rem;">
 									<div class="card-header card-default">
-										<span style="font-size: 65px; font-weight: bold;"><?php echo $totalDisVit['count']>0?$totalDisVit['count']:0 ?></span>
+										<span style="font-size: 65px; font-weight: bold;"><?php echo $totalChild['count']>0?$totalChild['count']:0 ?></span>
 									</div>
 									<div class="card-body">
 										<h5 class="card-title text-default">
-											<strong>DISTRIBUTION OF VITAMINS RECORDS</strong>
+											<strong>CHILDREN'S RECORDS</strong>
 										</h5>
-										<p class="card-text">Total no. of distribution of vitamins in the barangay.</p>
+										<p class="card-text">Total no. of children records.</p>
 										<a href="vitamin.php" class="btn btn-default btn-sm">View Details</a>
-									</div>
-								</div>
-								<div class="card text-center mr-3 " style="width: 15rem;">
-									<div class="card-header card-success">
-										<span style="font-size: 65px; font-weight: bold;"><?php echo $totalDeworming['count']?$totalDeworming['count']:0 ?></span>
-									</div>
-									<div class="card-body">
-										<h5 class="card-title">
-											<strong>DEWORMING RECORDS</strong>
-										</h5>
-										<p class="card-text">Total no. of deworming records in the barangay.</p>
-										<a href="deworming.php" class="btn btn-success btn-sm">View Details</a>
-									</div>
-								</div>
-								<div class="card text-center mr-3 " style="width: 15rem;">
-									<div class="card-header card-danger">
-										<span style="font-size: 65px; font-weight: bold;"><?php echo $totalOperTim['count']?$totalOperTim['count']:0 ?></span>
-									</div>
-									<div class="card-body">
-										<h5 class="card-title">
-											<strong>OPERATION TIMBANG RECORDS</strong>
-										</h5>
-										<p class="card-text">Total no. of operation timbang records in the barangay.</p>
-										<a href="oper-timbang.php" class="btn btn-danger btn-sm">View Details</a>
 									</div>
 								</div>
 							</div>

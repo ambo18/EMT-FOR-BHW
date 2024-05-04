@@ -53,22 +53,10 @@ $current_page = PageName();
                     </span>
                     <h4 class="text-section">FOR CHILDREN</h4>
                 </li>
-                        <li class="nav-item <?= $current_page=='deworming.php' || $current_page=='deworming-add.php' || $current_page=='deworming-update.php' ? 'active' : null ?>">
-                            <a href="deworming.php" >
-                            <i class="fas"><img style="width: 30px; height: 30px;" src="icon/worm.png"></i>          
-                                <p>Deworming</p>
-                            </a>
-                        </li>
-                        <li class="nav-item <?= $current_page=='oper-timbang.php' || $current_page=='oper-timbang-add.php' || $current_page=='oper-timbang-update.php' ? 'active' : null ?>">
-                            <a href="oper-timbang.php" >
-                            <i class="fas"><img style="width: 30px; height: 30px;" src="icon/weight.png"></i>
-                                <p>Operation Timbang</p>
-                            </a>
-                        </li>
-                        <li class="nav-item <?= $current_page=='vitamin.php' || $current_page=='vitamin-add.php' || $current_page=='vitamin-update.php' ? 'active' : null ?>">
-                            <a href="vitamin.php" >
-                            <i class="fas"><img style="width: 30px; height: 30px;" src="icon/vitamins.png"></i>
-                                <p>Distribution Of Vitamin</p>
+                        <li class="nav-item <?= $current_page=='childrens-records.php' || $current_page=='childrens-records-update.php' || $current_page=='deworming-add.php' || $current_page=='oper-timbang-add.php' || $current_page=='vitamin-add.php' ? 'active' : null ?>">
+                            <a href="childrens-records.php" >
+                            <i class="fas"><img style="width: 30px; height: 30px;" src="icon/records.png"></i>          
+                                <p>Records</p>
                             </a>
                         </li>
 

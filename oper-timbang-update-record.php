@@ -10,7 +10,7 @@
     $weight = strtoupper($_POST['weight']);
     $height = strtoupper($_POST['height']);
     $nutritional_status = strtoupper($_POST['nutritional_status']);
-    $dateofopertimbang = strtoupper($_POST['dateofopertimbang']);
+    $date = strtoupper($_POST['date']);
     $phone = strtoupper($_POST['phone']);
     $remarks = strtoupper($_POST['remarks']);
 
@@ -26,7 +26,7 @@
                     weight     ='$weight',
                     height      ='$height',
                     nutritional_status='$nutritional_status',
-                    dateofopertimbang= '$dateofopertimbang',
+                    date= '$date',
                     phone  ='$phone',
                     remarks='$remarks'
              WHERE id='$id'";
@@ -38,5 +38,5 @@
         $_SESSION['message'] = 'Successfully updated resident!';
         $_SESSION['success'] = 'success';
     }
-    header('location: oper-timbang.php');
+    header('location: childrens-records.php');
 ?>

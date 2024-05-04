@@ -8,7 +8,7 @@
     $age = strtoupper($_POST['age']);
     $gender = strtoupper($_POST['gender']);
     $vitamin = strtoupper($_POST['vitamin']);
-    $dateofdisofvitamin = strtoupper($_POST['dateofdisofvitamin']);
+    $date = strtoupper($_POST['date']);
     $phone = strtoupper($_POST['phone']);
     $remarks = strtoupper($_POST['remarks']);
 
@@ -20,7 +20,7 @@
                     age        ='$age',
                     gender     ='$gender',
                     vitamin     ='$vitamin',
-                    dateofdisofvitamin='$dateofdisofvitamin',
+                    date='$date',
                     phone  ='$phone',
                     remarks='$remarks'
              WHERE id='$id'";
@@ -32,5 +32,5 @@
         $_SESSION['message'] = 'Successfully updated patient record!';
         $_SESSION['success'] = 'success';
     }
-    header('location: vitamin.php');
+    header('location: childrens-records.php');
 ?>
